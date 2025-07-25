@@ -8,23 +8,23 @@ import Link from 'next/link';
 
 const prices = [
   {
-    name: 'BAM 1 to 50',
+    name: '1 to 50 КМ',
     value: '1-50',
   },
   {
-    name: 'BAM 51 to 100',
+    name: '51 to 100 КМ',
     value: '51-100',
   },
   {
-    name: 'BAM 101 to 200',
+    name: '101 to 200 КМ',
     value: '101-200',
   },
   {
-    name: 'BAM 201 to 500',
+    name: '201 to 500 КМ',
     value: '201-500',
   },
   {
-    name: 'BAM 501 to 1000',
+    name: '501 to 1000 КМ',
     value: '501-1000',
   },
 ];

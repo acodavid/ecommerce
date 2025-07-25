@@ -61,13 +61,15 @@ const CURRENCY_FORMATTER = new Intl.NumberFormat('en-US', {
 
 // Format currency using the formatter above
 export function formatCurrency(amount: number | string | null) {
+  let formatted = 'NaN';
   if (typeof amount === 'number') {
-    return CURRENCY_FORMATTER.format(amount);
+    formatted = CURRENCY_FORMATTER.format(amount);
   } else if (typeof amount === 'string') {
-    return CURRENCY_FORMATTER.format(Number(amount));
-  } else {
-    return 'NaN';
+    formatted = CURRENCY_FORMATTER.format(Number(amount));
   }
+  // Extract the number part and format as 'amount КМ'
+  const numberPart = formatted.replace(/[^\d.,-]/g, '').trim();
+  return numberPart ? `${numberPart} КМ` : formatted;
 }
 
 // Format Number
