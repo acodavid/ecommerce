@@ -88,10 +88,10 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
 
   return (
     <>
-      <h1 className='py-4 h2-bold'>Shopping Cart</h1>
+      <h1 className='py-4 h2-bold'>Корпа за куповину</h1>
       {!cart || cart.items.length === 0 ? (
         <div>
-          Cart is empty. <Link href='/'>Go Shopping</Link>
+          Корпа је празна. <Link href='/'>Иди на куповину</Link>
         </div>
       ) : (
         <div className='grid md:grid-cols-4 md:gap-5'>
@@ -99,9 +99,9 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Item</TableHead>
-                  <TableHead className='text-center'>Quantity</TableHead>
-                  <TableHead className='text-right'>Price</TableHead>
+                  <TableHead>Производ</TableHead>
+                  <TableHead className='text-center'>Количина</TableHead>
+                  <TableHead className='text-right'>Цена</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -136,7 +136,7 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
           <Card>
             <CardContent className='p-4 gap-4'>
               <div className='pb-3 text-xl'>
-                Subtotal ({cart.items.reduce((a, c) => a + c.qty, 0)}):
+                Збир ({cart.items.reduce((a, c) => a + c.qty, 0)}):
                 <span className='font-bold'>
                   {formatCurrency(cart.itemsPrice)}
                 </span>
@@ -153,7 +153,7 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
                 ) : (
                   <ArrowRight className='w-4 h-4' />
                 )}{' '}
-                Proceed to Checkout
+                Настави на наплату
               </Button>
             </CardContent>
           </Card>

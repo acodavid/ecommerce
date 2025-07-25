@@ -34,13 +34,13 @@ const AdminOrdersPage = async (props: {
   return (
     <div className='space-y-2'>
       <div className='flex items-center gap-3'>
-        <h1 className='h2-bold'>Orders</h1>
+        <h1 className='h2-bold'>Наруџбе</h1>
         {searchText && (
           <div>
-            Filtered by <i>&quot;{searchText}&quot;</i>{' '}
+            Филтрирано са <i>&quot;{searchText}&quot;</i>{' '}
             <Link href='/admin/orders'>
               <Button variant='outline' size='sm'>
-                Remove Filter
+                Уклони филтер
               </Button>
             </Link>
           </div>
@@ -50,13 +50,13 @@ const AdminOrdersPage = async (props: {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>ID</TableHead>
-              <TableHead>DATE</TableHead>
-              <TableHead>BUYER</TableHead>
-              <TableHead>TOTAL</TableHead>
-              <TableHead>PAID</TableHead>
-              <TableHead>DELIVERED</TableHead>
-              <TableHead>ACTIONS</TableHead>
+              <TableHead>Број наруџбе</TableHead>
+              <TableHead>Датум</TableHead>
+              <TableHead>Купац</TableHead>
+              <TableHead>Укупно</TableHead>
+              <TableHead>Плаћено</TableHead>
+              <TableHead>Достављено</TableHead>
+              <TableHead>Акције</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -71,16 +71,16 @@ const AdminOrdersPage = async (props: {
                 <TableCell>
                   {order.isPaid && order.paidAt
                     ? formatDateTime(order.paidAt).dateTime
-                    : 'Not Paid'}
+                    : 'Није плаћено'}
                 </TableCell>
                 <TableCell>
                   {order.isDelivered && order.deliveredAt
                     ? formatDateTime(order.deliveredAt).dateTime
-                    : 'Not Delivered'}
+                    : 'Није достављено'}
                 </TableCell>
                 <TableCell>
                   <Button asChild variant='outline' size='sm'>
-                    <Link href={`/order/${order.id}`}>Details</Link>
+                    <Link href={`/order/${order.id}`}>Детаљи</Link>
                   </Button>
                   <DeleteDialog id={order.id} action={deleteOrder} />
                 </TableCell>

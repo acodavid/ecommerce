@@ -35,13 +35,13 @@ const AdminUserPage = async (props: {
   return (
     <div className='space-y-2'>
       <div className='flex items-center gap-3'>
-        <h1 className='h2-bold'>Users</h1>
+        <h1 className='h2-bold'>Корисници</h1>
         {searchText && (
           <div>
-            Filtered by <i>&quot;{searchText}&quot;</i>{' '}
+            Филтрирано са <i>&quot;{searchText}&quot;</i>{' '}
             <Link href='/admin/users'>
               <Button variant='outline' size='sm'>
-                Remove Filter
+                Уклони филтер
               </Button>
             </Link>
           </div>
@@ -51,11 +51,11 @@ const AdminUserPage = async (props: {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>ID</TableHead>
-              <TableHead>NAME</TableHead>
-              <TableHead>EMAIL</TableHead>
-              <TableHead>ROLE</TableHead>
-              <TableHead>ACTIONS</TableHead>
+              <TableHead>Идентификатор</TableHead>
+              <TableHead>Име</TableHead>
+              <TableHead>Мејл</TableHead>
+              <TableHead>Улога</TableHead>
+              <TableHead>Акције</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -66,14 +66,14 @@ const AdminUserPage = async (props: {
                 <TableCell>{user.email}</TableCell>
                 <TableCell>
                   {user.role === 'user' ? (
-                    <Badge variant='secondary'>User</Badge>
+                    <Badge variant='secondary'>Корисник</Badge>
                   ) : (
-                    <Badge variant='default'>Admin</Badge>
+                    <Badge variant='default'>Администратор</Badge>
                   )}
                 </TableCell>
                 <TableCell>
                   <Button asChild variant='outline' size='sm'>
-                    <Link href={`/admin/users/${user.id}`}>Edit</Link>
+                    <Link href={`/admin/users/${user.id}`}>Измијени</Link>
                   </Button>
                   <DeleteDialog id={user.id} action={deleteUser} />
                 </TableCell>

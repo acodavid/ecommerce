@@ -27,17 +27,17 @@ const OrdersPage = async (props: {
 
   return (
     <div className='space-y-2'>
-      <h2 className='h2-bold'>Orders</h2>
+      <h2 className='h2-bold'>Наруџбе</h2>
       <div className='overflow-x-auto'>
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>ID</TableHead>
-              <TableHead>DATE</TableHead>
-              <TableHead>TOTAL</TableHead>
-              <TableHead>PAID</TableHead>
-              <TableHead>DELIVERED</TableHead>
-              <TableHead>ACTIONS</TableHead>
+              <TableHead>Идентификатор</TableHead>
+              <TableHead>Датум</TableHead>
+              <TableHead>Укупно</TableHead>
+              <TableHead>Плаћено</TableHead>
+              <TableHead>Достављено</TableHead>
+              <TableHead>Акције</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -51,16 +51,16 @@ const OrdersPage = async (props: {
                 <TableCell>
                   {order.isPaid && order.paidAt
                     ? formatDateTime(order.paidAt).dateTime
-                    : 'Not Paid'}
+                    : 'Није плаћено'}
                 </TableCell>
                 <TableCell>
                   {order.isDelivered && order.deliveredAt
                     ? formatDateTime(order.deliveredAt).dateTime
-                    : 'Not Delivered'}
+                    : 'Није достављено'}
                 </TableCell>
                 <TableCell>
                   <Link href={`/order/${order.id}`}>
-                    <span className='px-2'>Details</span>
+                    <span className='px-2'>Детаљи</span>
                   </Link>
                 </TableCell>
               </TableRow>

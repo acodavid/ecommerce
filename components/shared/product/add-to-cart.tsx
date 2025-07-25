@@ -35,7 +35,7 @@ const AddToCart = ({ cart, item }: { cart?: Cart; item: CartItem }) => {
             altText='Go To Cart'
             onClick={() => router.push('/cart')}
           >
-            Go To Cart
+            Иди у корпу
           </ToastAction>
         ),
       });
@@ -85,7 +85,7 @@ const AddToCart = ({ cart, item }: { cart?: Cart; item: CartItem }) => {
       ) : (
         <Plus className='w-4 h-4' />
       )}{' '}
-      Add To Cart
+      Додај у корпу
     </Button>
   );
 };

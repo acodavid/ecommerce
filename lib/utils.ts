@@ -32,8 +32,8 @@ export function formatError(error: any) {
     error.code === 'P2002'
   ) {
     // Handle Prisma error
-    const field = error.meta?.target ? error.meta.target[0] : 'Field';
-    return `${field.charAt(0).toUpperCase() + field.slice(1)} already exists`;
+    const field = error.meta?.target ? error.meta.target[0] : 'Поље';
+    return `${field.charAt(0).toUpperCase() + field.slice(1)} већ постоји`;
   } else {
     // Handle other errors
     return typeof error.message === 'string'
@@ -49,12 +49,12 @@ export function round2(value: number | string) {
   } else if (typeof value === 'string') {
     return Math.round((Number(value) + Number.EPSILON) * 100) / 100;
   } else {
-    throw new Error('Value is not a number or string');
+    throw new Error('Вриједност није број или низ');
   }
 }
 
 const CURRENCY_FORMATTER = new Intl.NumberFormat('en-US', {
-  currency: 'USD',
+  currency: 'BAM',
   style: 'currency',
   minimumFractionDigits: 2,
 });

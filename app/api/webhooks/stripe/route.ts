@@ -26,11 +26,11 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({
-      message: 'updateOrderToPaid was successful',
+      message: 'Успјешно ажурирање наруџбе',
     });
   }
 
   return NextResponse.json({
-    message: 'event is not charge.succeeded',
+    message: 'догађај није charge.succeeded',
   });
 }

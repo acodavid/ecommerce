@@ -8,30 +8,30 @@ const IconBoxes = () => {
         <CardContent className='grid md:grid-cols-4 gap-4 p-4'>
           <div className='space-y-2'>
             <ShoppingBag />
-            <div className='text-sm font-bold'>Free Shipping</div>
+            <div className='text-sm font-bold'>Бесплатна достава</div>
             <div className='text-sm text-muted-foreground'>
-              Free shipping on orders above $100
+              Бесплатна достава за поруџбине преко 100 КМ
             </div>
           </div>
           <div className='space-y-2'>
             <DollarSign />
-            <div className='text-sm font-bold'>Money Back Guarantee</div>
+            <div className='text-sm font-bold'>Гаранција поврата новца</div>
             <div className='text-sm text-muted-foreground'>
-              Within 30 days of purchase
+              У року од 30 дана од куповине
             </div>
           </div>
           <div className='space-y-2'>
             <WalletCards />
-            <div className='text-sm font-bold'>Flexible Payment</div>
+            <div className='text-sm font-bold'>Флексибилно плаћање</div>
             <div className='text-sm text-muted-foreground'>
-              Pay with credit card, PayPal or COD
+              Плаћајте кредитном картицом, PayPal-ом или при испоруци
             </div>
           </div>
           <div className='space-y-2'>
             <Headset />
-            <div className='text-sm font-bold'>24/7 Support</div>
+            <div className='text-sm font-bold'>24/7 Подршка</div>
             <div className='text-sm text-muted-foreground'>
-              Get support at any time
+              Подршка доступна у свако доба
             </div>
           </div>
         </CardContent>

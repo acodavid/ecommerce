@@ -8,23 +8,23 @@ import Link from 'next/link';
 
 const prices = [
   {
-    name: '$1 to $50',
+    name: 'BAM 1 to 50',
     value: '1-50',
   },
   {
-    name: '$51 to $100',
+    name: 'BAM 51 to 100',
     value: '51-100',
   },
   {
-    name: '$101 to $200',
+    name: 'BAM 101 to 200',
     value: '101-200',
   },
   {
-    name: '$201 to $500',
+    name: 'BAM 201 to 500',
     value: '201-500',
   },
   {
-    name: '$501 to $1000',
+    name: 'BAM 501 to 1000',
     value: '501-1000',
   },
 ];
@@ -128,7 +128,7 @@ const SearchPage = async (props: {
     <div className='grid md:grid-cols-5 md:gap-5'>
       <div className='filter-links'>
         {/* Category Links */}
-        <div className='text-xl mb-2 mt-3'>Department</div>
+        <div className='text-xl mb-2 mt-3'>Категорија </div>
         <div>
           <ul className='space-y-1'>
             <li>
@@ -138,7 +138,7 @@ const SearchPage = async (props: {
                 }`}
                 href={getFilterUrl({ c: 'all' })}
               >
-                Any
+                Све
               </Link>
             </li>
             {categories.map((x) => (
@@ -154,7 +154,7 @@ const SearchPage = async (props: {
           </ul>
         </div>
         {/* Price Links */}
-        <div className='text-xl mb-2 mt-8'>Price</div>
+        <div className='text-xl mb-2 mt-8'>Цијена</div>
         <div>
           <ul className='space-y-1'>
             <li>
@@ -162,7 +162,7 @@ const SearchPage = async (props: {
                 className={`${price === 'all' && 'font-bold'}`}
                 href={getFilterUrl({ p: 'all' })}
               >
-                Any
+                Све
               </Link>
             </li>
             {prices.map((p) => (
@@ -178,7 +178,7 @@ const SearchPage = async (props: {
           </ul>
         </div>
         {/* Rating Links */}
-        <div className='text-xl mb-2 mt-8'>Customer Ratings</div>
+        <div className='text-xl mb-2 mt-8'>Оцјене купаца</div>
         <div>
           <ul className='space-y-1'>
             <li>
@@ -186,7 +186,7 @@ const SearchPage = async (props: {
                 className={`${rating === 'all' && 'font-bold'}`}
                 href={getFilterUrl({ r: 'all' })}
               >
-                Any
+                Све
               </Link>
             </li>
             {ratings.map((r) => (
@@ -195,7 +195,7 @@ const SearchPage = async (props: {
                   className={`${rating === r.toString() && 'font-bold'}`}
                   href={getFilterUrl({ r: `${r}` })}
                 >
-                  {`${r} stars & up`}
+                  {`${r} звијезда & више`}
                 </Link>
               </li>
             ))}
@@ -206,21 +206,21 @@ const SearchPage = async (props: {
         <div className='flex-between flex-col md:flex-row my-4'>
           <div className='flex items-center'>
             {q !== 'all' && q !== '' && 'Query: ' + q}
-            {category !== 'all' && category !== '' && 'Category: ' + category}
-            {price !== 'all' && ' Price: ' + price}
-            {rating !== 'all' && ' Rating: ' + rating + ' stars & up'}
+            {category !== 'all' && category !== '' && 'Категорија: ' + category}
+            {price !== 'all' && ' Цијена: ' + price}
+            {rating !== 'all' && ' Оцјена: ' + rating + ' звијезда & више'}
             &nbsp;
             {(q !== 'all' && q !== '') ||
             (category !== 'all' && category !== '') ||
             rating !== 'all' ||
             price !== 'all' ? (
               <Button variant={'link'} asChild>
-                <Link href='/search'>Clear</Link>
+                <Link href='/search'>Очисти</Link>
               </Button>
             ) : null}
           </div>
-          <div>
-            Sort by{' '}
+          {/* <div>
+            Сортирај{' '}
             {sortOrders.map((s) => (
               <Link
                 key={s}
@@ -230,10 +230,10 @@ const SearchPage = async (props: {
                 {s}
               </Link>
             ))}
-          </div>
+          </div> */}
         </div>
         <div className='grid grid-cols-1 gap-4 md:grid-cols-3'>
-          {products.data.length === 0 && <div>No products found</div>}
+          {products.data.length === 0 && <div>Нема производа</div>}
           {products.data.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

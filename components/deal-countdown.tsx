@@ -50,7 +50,7 @@ const DealCountdown = () => {
     return (
       <section className='grid grid-cols-1 md:grid-cols-2 my-20'>
         <div className='flex flex-col gap-2 justify-center'>
-          <h3 className='text-3xl font-bold'>Loading Countdown...</h3>
+          <h3 className='text-3xl font-bold'>Учитавање одбројавања...</h3>
         </div>
       </section>
     );
@@ -64,15 +64,15 @@ const DealCountdown = () => {
   ) {
     return (
       <section className='grid grid-cols-1 md:grid-cols-2 my-20'>
-        <div className='flex flex-col gap-2 justify-center'>
-          <h3 className='text-3xl font-bold'>Deal Has Ended</h3>
+        {/* <div className='flex flex-col gap-2 justify-center'>
+          <h3 className='text-3xl font-bold'>Промоција је завршена</h3>
           <p>
-            This deal is no longer available. Check out our latest promotions!
+            Ова промоција више није доступна. Погледајте наше најновије понуде!
           </p>
 
           <div className='text-center'>
             <Button asChild>
-              <Link href='/search'>View Products</Link>
+              <Link href='/search'>Погледајте производе</Link>
             </Button>
           </div>
         </div>
@@ -83,7 +83,7 @@ const DealCountdown = () => {
             width={300}
             height={200}
           />
-        </div>
+        </div> */}
       </section>
     );
   }
@@ -91,12 +91,12 @@ const DealCountdown = () => {
   return (
     <section className='grid grid-cols-1 md:grid-cols-2 my-20'>
       <div className='flex flex-col gap-2 justify-center'>
-        <h3 className='text-3xl font-bold'>Deal Of The Month</h3>
+        <h3 className='text-3xl font-bold'>Промоција Месеца</h3>
         <p>
-          Get ready for a shopping experience like never before with our Deals
-          of the Month! Every purchase comes with exclusive perks and offers,
-          making this month a celebration of savvy choices and amazing deals.
-          Don&apos;t miss out! 🎁🛒
+          Припремите се за шопинг искуство какво до сада нисте имали са нашим
+          Промоцијама Месеца! Свака куповина доноси ексклузивне погодности и
+          понуде, чинећи овај месец прославом паметних избора и невероватних
+          понуда. Не пропустите! 🎁🛒
         </p>
         <ul className='grid grid-cols-4'>
           <StatBox label='Days' value={time.days} />
@@ -106,7 +106,7 @@ const DealCountdown = () => {
         </ul>
         <div className='text-center'>
           <Button asChild>
-            <Link href='/search'>View Products</Link>
+            <Link href='/search'>Погледајте производе</Link>
           </Button>
         </div>
       </div>

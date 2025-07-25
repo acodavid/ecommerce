@@ -47,25 +47,25 @@ const DeleteDialog = ({
     <AlertDialog open={open} onOpenChange={setOpen}>
       <AlertDialogTrigger asChild>
         <Button size='sm' variant='destructive' className='ml-2'>
-          Delete
+          Обрисати
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogTitle>Да ли сте сигурни?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone
+            Ова акција се не може опозвати
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogCancel>Откажи</AlertDialogCancel>
           <Button
             variant='destructive'
             size='sm'
             disabled={isPending}
             onClick={handleDeleteClick}
           >
-            {isPending ? 'Deleting...' : 'Delete'}
+            {isPending ? 'Брише...' : 'Обрисати'}
           </Button>
         </AlertDialogFooter>
       </AlertDialogContent>

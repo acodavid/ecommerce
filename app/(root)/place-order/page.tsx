@@ -29,7 +29,7 @@ const PlaceOrderPage = async () => {
   const session = await auth();
   const userId = session?.user?.id;
 
-  if (!userId) throw new Error('User not found');
+  if (!userId) throw new Error('Корисник није пронађен');
 
   const user = await getUserById(userId);
 
@@ -42,20 +42,21 @@ const PlaceOrderPage = async () => {
   return (
     <>
       <CheckoutSteps current={3} />
-      <h1 className='py-4 text-2xl'>Place Order</h1>
+      <h1 className='py-4 text-2xl'>Наруџба</h1>
       <div className='grid md:grid-cols-3 md:gap-5'>
         <div className='md:col-span-2 overflow-x-auto space-y-4'>
           <Card>
             <CardContent className='p-4 gap-4'>
-              <h2 className='text-xl pb-4'>Shipping Address</h2>
+              <h2 className='text-xl pb-4'>Адреса за доставу</h2>
               <p>{userAddress.fullName}</p>
               <p>
                 {userAddress.streetAddress}, {userAddress.city}{' '}
                 {userAddress.postalCode}, {userAddress.country}{' '}
               </p>
+              <p>Телефон: {userAddress.phoneNumber}</p>
               <div className='mt-3'>
                 <Link href='/shipping-address'>
-                  <Button variant='outline'>Edit</Button>
+                  <Button variant='outline'>Измени</Button>
                 </Link>
               </div>
             </CardContent>
@@ -63,11 +64,11 @@ const PlaceOrderPage = async () => {
 
           <Card>
             <CardContent className='p-4 gap-4'>
-              <h2 className='text-xl pb-4'>Payment Method</h2>
+              <h2 className='text-xl pb-4'>Начин плаћања</h2>
               <p>{user.paymentMethod}</p>
               <div className='mt-3'>
                 <Link href='/payment-method'>
-                  <Button variant='outline'>Edit</Button>
+                  <Button variant='outline'>Измени</Button>
                 </Link>
               </div>
             </CardContent>
@@ -75,13 +76,13 @@ const PlaceOrderPage = async () => {
 
           <Card>
             <CardContent className='p-4 gap-4'>
-              <h2 className='text-xl pb-4'>Order Items</h2>
+              <h2 className='text-xl pb-4'>Ставке наруџбе</h2>
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Item</TableHead>
-                    <TableHead>Quantity</TableHead>
-                    <TableHead>Price</TableHead>
+                    <TableHead>Артикал</TableHead>
+                    <TableHead>Количина</TableHead>
+                    <TableHead>Цијена</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -118,19 +119,19 @@ const PlaceOrderPage = async () => {
           <Card>
             <CardContent className='p-4 gap-4 space-y-4'>
               <div className='flex justify-between'>
-                <div>Items</div>
+                <div>Артикли</div>
                 <div>{formatCurrency(cart.itemsPrice)}</div>
               </div>
               <div className='flex justify-between'>
-                <div>Tax</div>
+                <div>Порез</div>
                 <div>{formatCurrency(cart.taxPrice)}</div>
               </div>
               <div className='flex justify-between'>
-                <div>Shipping</div>
+                <div>Достава</div>
                 <div>{formatCurrency(cart.shippingPrice)}</div>
               </div>
               <div className='flex justify-between'>
-                <div>Total</div>
+                <div>Укупно</div>
                 <div>{formatCurrency(cart.totalPrice)}</div>
               </div>
               <PlaceOrderForm />

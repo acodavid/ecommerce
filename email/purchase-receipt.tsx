@@ -32,6 +32,7 @@ PurchaseReceiptEmail.PreviewProps = {
       city: 'New York',
       postalCode: '10001',
       country: 'US',
+      phoneNumber: '+1234567890',
     },
     createdAt: new Date(),
     totalPrice: '100',
@@ -69,23 +70,23 @@ type OrderInformationProps = {
 export default function PurchaseReceiptEmail({ order }: OrderInformationProps) {
   return (
     <Html>
-      <Preview>View order receipt</Preview>
+      <Preview>Погледајте признаницу поруџбине</Preview>
       <Tailwind>
         <Head />
         <Body className='font-sans bg-white'>
           <Container className='max-w-xl'>
-            <Heading>Purchase Receipt</Heading>
+            <Heading>Потврда о куповини</Heading>
             <Section>
               <Row>
                 <Column>
                   <Text className='mb-0 mr-4 text-gray-500 whitespace-nowrap text-nowrap'>
-                    Order ID
+                    Идентификациони број наруџбе
                   </Text>
                   <Text className='mt-0 mr-4'>{order.id.toString()}</Text>
                 </Column>
                 <Column>
                   <Text className='mb-0 mr-4 text-gray-500 whitespace-nowrap text-nowrap'>
-                    Purchase Date
+                    Датум куповине
                   </Text>
                   <Text className='mt-0 mr-4'>
                     {dateFormatter.format(order.createdAt)}
@@ -93,10 +94,18 @@ export default function PurchaseReceiptEmail({ order }: OrderInformationProps) {
                 </Column>
                 <Column>
                   <Text className='mb-0 mr-4 text-gray-500 whitespace-nowrap text-nowrap'>
-                    Price Paid
+                    Цијена плаћена
                   </Text>
                   <Text className='mt-0 mr-4'>
                     {formatCurrency(order.totalPrice)}
+                  </Text>
+                </Column>
+                <Column>
+                  <Text className='mb-0 mr-4 text-gray-500 whitespace-nowrap text-nowrap'>
+                    Телефон
+                  </Text>
+                  <Text className='mt-0 mr-4'>
+                    {order.shippingAddress.phoneNumber}
                   </Text>
                 </Column>
               </Row>

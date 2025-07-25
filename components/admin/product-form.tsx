@@ -117,7 +117,7 @@ const ProductForm = ({
               <FormItem className='w-full'>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder='Enter product name' {...field} />
+                  <Input placeholder='Унеси име производа' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -139,7 +139,7 @@ const ProductForm = ({
                 <FormLabel>Name</FormLabel>
                 <FormControl>
                   <div className='relative'>
-                    <Input placeholder='Enter slug' {...field} />
+                    <Input placeholder='Унеси скраћеницу' {...field} />
                     <Button
                       type='button'
                       className='bg-gray-500 hover:bg-gray-600 text-white px-4 py-1 mt-2'
@@ -150,7 +150,7 @@ const ProductForm = ({
                         );
                       }}
                     >
-                      Generate
+                      Генериши
                     </Button>
                   </div>
                 </FormControl>
@@ -173,9 +173,9 @@ const ProductForm = ({
               >;
             }) => (
               <FormItem className='w-full'>
-                <FormLabel>Category</FormLabel>
+                <FormLabel>Категорија</FormLabel>
                 <FormControl>
-                  <Input placeholder='Enter category' {...field} />
+                  <Input placeholder='Унеси категорију' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -194,9 +194,9 @@ const ProductForm = ({
               >;
             }) => (
               <FormItem className='w-full'>
-                <FormLabel>Brand</FormLabel>
+                <FormLabel>Бренд</FormLabel>
                 <FormControl>
-                  <Input placeholder='Enter brand' {...field} />
+                  <Input placeholder='Унеси бренд' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -217,9 +217,9 @@ const ProductForm = ({
               >;
             }) => (
               <FormItem className='w-full'>
-                <FormLabel>Price</FormLabel>
+                <FormLabel>Цијена</FormLabel>
                 <FormControl>
-                  <Input placeholder='Enter product price' {...field} />
+                  <Input placeholder='Унеси цијену производа' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -238,9 +238,9 @@ const ProductForm = ({
               >;
             }) => (
               <FormItem className='w-full'>
-                <FormLabel>Stock</FormLabel>
+                <FormLabel>Количина</FormLabel>
                 <FormControl>
-                  <Input placeholder='Enter stock' {...field} />
+                  <Input placeholder='Унеси количину' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -254,7 +254,7 @@ const ProductForm = ({
             name='images'
             render={() => (
               <FormItem className='w-full'>
-                <FormLabel>Images</FormLabel>
+                <FormLabel>Слике</FormLabel>
                 <Card>
                   <CardContent className='space-y-2 mt-2 min-h-48'>
                     <div className='flex-start space-x-2'>
@@ -292,7 +292,7 @@ const ProductForm = ({
         </div>
         <div className='upload-field'>
           {/* isFeatured */}
-          Featured Product
+          Производ за почетну страницу
           <Card>
             <CardContent className='space-y-2 mt-2'>
               <FormField
@@ -306,7 +306,7 @@ const ProductForm = ({
                         onCheckedChange={field.onChange}
                       />
                     </FormControl>
-                    <FormLabel>Is Featured?</FormLabel>
+                    <FormLabel>Да ли је истакнут?</FormLabel>
                   </FormItem>
                 )}
               />
@@ -351,10 +351,10 @@ const ProductForm = ({
               >;
             }) => (
               <FormItem className='w-full'>
-                <FormLabel>Description</FormLabel>
+                <FormLabel>Опис</FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder='Enter product description'
+                    placeholder='Унеси опис производа'
                     className='resize-none'
                     {...field}
                   />
@@ -371,7 +371,11 @@ const ProductForm = ({
             disabled={form.formState.isSubmitting}
             className='button col-span-2 w-full'
           >
-            {form.formState.isSubmitting ? 'Submitting' : `${type} Product`}
+            {form.formState.isSubmitting
+              ? 'Потврђујем...'
+              : type === 'Create'
+                ? 'Креирај производ'
+                : 'Ажурирај производ'}
           </Button>
         </div>
       </form>

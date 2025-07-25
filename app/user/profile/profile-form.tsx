@@ -69,7 +69,7 @@ const ProfileForm = () => {
                 <FormControl>
                   <Input
                     disabled
-                    placeholder='Email'
+                    placeholder='Мејл'
                     className='input-field'
                     {...field}
                   />
@@ -85,7 +85,7 @@ const ProfileForm = () => {
               <FormItem className='w-full'>
                 <FormControl>
                   <Input
-                    placeholder='Name'
+                    placeholder='Име'
                     className='input-field'
                     {...field}
                   />
@@ -101,7 +101,7 @@ const ProfileForm = () => {
           className='button col-span-2 w-full'
           disabled={form.formState.isSubmitting}
         >
-          {form.formState.isSubmitting ? 'Submitting...' : 'Update Profile'}
+          {form.formState.isSubmitting ? 'Потврђујем...' : 'Ажурирај профил'}
         </Button>
       </form>
     </Form>

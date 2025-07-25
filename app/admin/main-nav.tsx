@@ -6,19 +6,19 @@ import React from 'react';
 
 const links = [
   {
-    title: 'Overview',
+    title: 'Почетна',
     href: '/admin/overview',
   },
   {
-    title: 'Products',
+    title: 'Производи',
     href: '/admin/products',
   },
   {
-    title: 'Orders',
+    title: 'Наруџбе',
     href: '/admin/orders',
   },
   {
-    title: 'Users',
+    title: 'Корисници',
     href: '/admin/users',
   },
 ];

@@ -18,7 +18,7 @@ const UserButton = async () => {
     return (
       <Button asChild>
         <Link href='/sign-in'>
-          <UserIcon /> Sign In
+          <UserIcon /> Пријави се
         </Link>
       </Button>
     );
@@ -53,19 +53,19 @@ const UserButton = async () => {
 
           <DropdownMenuItem>
             <Link href='/user/profile' className='w-full'>
-              User Profile
+              Профил корисника
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <Link href='/user/orders' className='w-full'>
-              Order History
+              Историја поруџбина
             </Link>
           </DropdownMenuItem>
 
           {session?.user?.role === 'admin' && (
             <DropdownMenuItem>
               <Link href='/admin/overview' className='w-full'>
-                Admin
+                Админ
               </Link>
             </DropdownMenuItem>
           )}
@@ -76,7 +76,7 @@ const UserButton = async () => {
                 className='w-full py-4 px-2 h-4 justify-start'
                 variant='ghost'
               >
-                Sign Out
+                Одјави се
               </Button>
             </form>
           </DropdownMenuItem>

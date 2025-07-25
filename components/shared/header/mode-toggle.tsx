@@ -41,25 +41,25 @@ const ModeToggle = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuLabel>Appearance</DropdownMenuLabel>
+        <DropdownMenuLabel>Изглед</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuCheckboxItem
           checked={theme === 'system'}
           onClick={() => setTheme('system')}
         >
-          System
+          Системски
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           checked={theme === 'dark'}
           onClick={() => setTheme('dark')}
         >
-          Dark
+          Тамна
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           checked={theme === 'light'}
           onClick={() => setTheme('light')}
         >
-          Light
+          Светла
         </DropdownMenuCheckboxItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -36,16 +36,16 @@ const SignInPage = async (props: {
         <CardHeader className='space-y-4'>
           <Link href='/' className='flex-center'>
             <Image
-              src='/images/logo.svg'
+              src='/images/logo.jpg'
               width={100}
               height={100}
               alt={`${APP_NAME} logo`}
               priority={true}
             />
           </Link>
-          <CardTitle className='text-center'>Sign In</CardTitle>
+          <CardTitle className='text-center'>Пријави се</CardTitle>
           <CardDescription className='text-center'>
-            Sign in to your account
+            Пријавите се на свој налог
           </CardDescription>
         </CardHeader>
         <CardContent className='space-y-4'>

@@ -25,13 +25,14 @@ export const shippingAddressDefaultValues = {
   city: '',
   postalCode: '',
   country: '',
+  phoneNumber: '',
 };
 
 export const PAYMENT_METHODS = process.env.PAYMENT_METHODS
   ? process.env.PAYMENT_METHODS.split(', ')
-  : ['PayPal', 'Stripe', 'CashOnDelivery'];
+  : ['CashOnDelivery'];
 export const DEFAULT_PAYMENT_METHOD =
-  process.env.DEFAULT_PAYMENT_METHOD || 'PayPal';
+  process.env.DEFAULT_PAYMENT_METHOD || 'CashOnDelivery';
 
 export const PAGE_SIZE = Number(process.env.PAGE_SIZE) || 12;
 

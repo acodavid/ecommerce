@@ -12,7 +12,7 @@ const PaymentMethodPage = async () => {
   const session = await auth();
   const userId = session?.user?.id;
 
-  if (!userId) throw new Error('User not found');
+  if (!userId) throw new Error('Користник није пронађен');
 
   const user = await getUserById(userId);
 

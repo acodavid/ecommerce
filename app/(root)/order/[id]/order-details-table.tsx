@@ -110,7 +110,7 @@ const OrderDetailsTable = ({
           })
         }
       >
-        {isPending ? 'processing...' : 'Mark As Paid'}
+        {isPending ? 'обрађујем...' : 'Означи као плаћено'}
       </Button>
     );
   };
@@ -134,55 +134,57 @@ const OrderDetailsTable = ({
           })
         }
       >
-        {isPending ? 'processing...' : 'Mark As Delivered'}
+        {isPending ? 'обрађујем...' : 'Означи као испоручено'}
       </Button>
     );
   };
 
   return (
     <>
-      <h1 className='py-4 text-2xl'>Order {formatId(id)}</h1>
+      <h1 className='py-4 text-2xl'>Наруџба {formatId(id)}</h1>
       <div className='grid md:grid-cols-3 md:gap-5'>
         <div className='col-span-2 space-4-y overlow-x-auto'>
           <Card>
             <CardContent className='p-4 gap-4'>
-              <h2 className='text-xl pb-4'>Payment Method</h2>
+              <h2 className='text-xl pb-4'>Метод плаћања</h2>
               <p className='mb-2'>{paymentMethod}</p>
               {isPaid ? (
                 <Badge variant='secondary'>
-                  Paid at {formatDateTime(paidAt!).dateTime}
+                  Плаћено {formatDateTime(paidAt!).dateTime}
                 </Badge>
               ) : (
-                <Badge variant='destructive'>Not paid</Badge>
+                <Badge variant='destructive'>Није плаћено</Badge>
               )}
             </CardContent>
           </Card>
           <Card className='my-2'>
             <CardContent className='p-4 gap-4'>
-              <h2 className='text-xl pb-4'>Shipping Address</h2>
+              <h2 className='text-xl pb-4'>Адреса за испоруку</h2>
               <p>{shippingAddress.fullName}</p>
               <p className='mb-2'>
                 {shippingAddress.streetAddress}, {shippingAddress.city}
                 {shippingAddress.postalCode}, {shippingAddress.country}
+                
               </p>
+              <p>{shippingAddress.phoneNumber}</p>
               {isDelivered ? (
                 <Badge variant='secondary'>
-                  Delivered at {formatDateTime(deliveredAt!).dateTime}
+                  Достављено {formatDateTime(deliveredAt!).dateTime}
                 </Badge>
               ) : (
-                <Badge variant='destructive'>Not Delivered</Badge>
+                <Badge variant='destructive'>Није достављено</Badge>
               )}
             </CardContent>
           </Card>
           <Card>
             <CardContent className='p-4 gap-4'>
-              <h2 className='text-xl pb-4'>Order Items</h2>
+              <h2 className='text-xl pb-4'>Артикли из наруџбе</h2>
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Item</TableHead>
-                    <TableHead>Quantity</TableHead>
-                    <TableHead>Price</TableHead>
+                    <TableHead>Артикал</TableHead>
+                    <TableHead>Количина</TableHead>
+                    <TableHead>Цијена</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -219,7 +221,7 @@ const OrderDetailsTable = ({
           <Card>
             <CardContent className='p-4 gap-4 space-y-4'>
               <div className='flex justify-between'>
-                <div>Items</div>
+                <div>Артикли</div>
                 <div>{formatCurrency(itemsPrice)}</div>
               </div>
               <div className='flex justify-between'>
@@ -227,11 +229,11 @@ const OrderDetailsTable = ({
                 <div>{formatCurrency(taxPrice)}</div>
               </div>
               <div className='flex justify-between'>
-                <div>Shipping</div>
+                <div>Достава</div>
                 <div>{formatCurrency(shippingPrice)}</div>
               </div>
               <div className='flex justify-between'>
-                <div>Total</div>
+                <div>Укупно</div>
                 <div>{formatCurrency(totalPrice)}</div>
               </div>
 
