@@ -30,9 +30,9 @@ export const shippingAddressDefaultValues = {
 
 export const PAYMENT_METHODS = process.env.PAYMENT_METHODS
   ? process.env.PAYMENT_METHODS.split(', ')
-  : ['CashOnDelivery'];
+  : ['Готовина при достави'];
 export const DEFAULT_PAYMENT_METHOD =
-  process.env.DEFAULT_PAYMENT_METHOD || 'CashOnDelivery';
+  process.env.DEFAULT_PAYMENT_METHOD || 'Готовина при достави';
 
 export const PAGE_SIZE = Number(process.env.PAGE_SIZE) || 12;
 

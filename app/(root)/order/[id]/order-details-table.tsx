@@ -260,7 +260,7 @@ const OrderDetailsTable = ({
               )}
 
               {/* Cash On Delivery */}
-              {isAdmin && !isPaid && paymentMethod === 'CashOnDelivery' && (
+              {isAdmin && !isPaid && paymentMethod === 'Готовина при достави' && (
                 <MarkAsPaidButton />
               )}
               {isAdmin && isPaid && !isDelivered && <MarkAsDeliveredButton />}
