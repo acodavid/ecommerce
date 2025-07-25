@@ -101,7 +101,7 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
                 <TableRow>
                   <TableHead>Производ</TableHead>
                   <TableHead className='text-center'>Количина</TableHead>
-                  <TableHead className='text-right'>Цена</TableHead>
+                  <TableHead className='text-right'>Цијена</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -126,7 +126,7 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
                       <span>{item.qty}</span>
                       <AddButton item={item} />
                     </TableCell>
-                    <TableCell className='text-right'>${item.price}</TableCell>
+                    <TableCell className='text-right'>BAM{item.price}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

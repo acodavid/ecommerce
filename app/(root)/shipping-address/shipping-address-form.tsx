@@ -54,9 +54,10 @@ const ShippingAddressForm = ({ address }: { address: ShippingAddress }) => {
   return (
     <>
       <div className='max-w-md mx-auto space-y-4'>
-        <h1 className='h2-bold mt-4'>Shipping Address</h1>
+        <h1 className='h2-bold mt-4'>Адреса за доставу</h1>
         <p className='text-sm text-muted-foreground'>
-          Please enter and address to ship to
+          Молимо унесите своје податке за доставу. Ови подаци ће бити коришћени
+          за обраду ваше наруџбе и доставу производа.
         </p>
         <Form {...form}>
           <form
@@ -77,9 +78,9 @@ const ShippingAddressForm = ({ address }: { address: ShippingAddress }) => {
                   >;
                 }) => (
                   <FormItem className='w-full'>
-                    <FormLabel>Full Name</FormLabel>
+                    <FormLabel>Име и презиме</FormLabel>
                     <FormControl>
-                      <Input placeholder='Enter full name' {...field} />
+                      <Input placeholder='Унесите име и презиме' {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -99,9 +100,9 @@ const ShippingAddressForm = ({ address }: { address: ShippingAddress }) => {
                   >;
                 }) => (
                   <FormItem className='w-full'>
-                    <FormLabel>Address</FormLabel>
+                    <FormLabel>Адреса</FormLabel>
                     <FormControl>
-                      <Input placeholder='Enter address' {...field} />
+                      <Input placeholder='Унесите адресу' {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -121,9 +122,9 @@ const ShippingAddressForm = ({ address }: { address: ShippingAddress }) => {
                   >;
                 }) => (
                   <FormItem className='w-full'>
-                    <FormLabel>City</FormLabel>
+                    <FormLabel>Град</FormLabel>
                     <FormControl>
-                      <Input placeholder='Enter city' {...field} />
+                      <Input placeholder='Унесите град' {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -143,9 +144,9 @@ const ShippingAddressForm = ({ address }: { address: ShippingAddress }) => {
                   >;
                 }) => (
                   <FormItem className='w-full'>
-                    <FormLabel>Postal Code</FormLabel>
+                    <FormLabel>Поштански број</FormLabel>
                     <FormControl>
-                      <Input placeholder='Enter postal code' {...field} />
+                      <Input placeholder='Унесите поштански број' {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -165,9 +166,9 @@ const ShippingAddressForm = ({ address }: { address: ShippingAddress }) => {
                   >;
                 }) => (
                   <FormItem className='w-full'>
-                    <FormLabel>Country</FormLabel>
+                    <FormLabel>Држава</FormLabel>
                     <FormControl>
-                      <Input placeholder='Enter country' {...field} />
+                      <Input placeholder='Унесите државу' {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -187,9 +188,9 @@ const ShippingAddressForm = ({ address }: { address: ShippingAddress }) => {
                   >;
                 }) => (
                   <FormItem className='w-full'>
-                    <FormLabel>Phone Number</FormLabel>
+                    <FormLabel>Број телефона</FormLabel>
                     <FormControl>
-                      <Input placeholder='Enter phone number' {...field} />
+                      <Input placeholder='Унесите број телефона' {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -203,7 +204,7 @@ const ShippingAddressForm = ({ address }: { address: ShippingAddress }) => {
                 ) : (
                   <ArrowRight className='w-4 h-4' />
                 )}{' '}
-                Continue
+                Потврди
               </Button>
             </div>
           </form>
