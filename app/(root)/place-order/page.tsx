@@ -122,10 +122,10 @@ const PlaceOrderPage = async () => {
                 <div>Артикли</div>
                 <div>{formatCurrency(cart.itemsPrice)}</div>
               </div>
-              <div className='flex justify-between'>
+              {/* <div className='flex justify-between'>
                 <div>Порез</div>
                 <div>{formatCurrency(cart.taxPrice)}</div>
-              </div>
+              </div> */}
               <div className='flex justify-between'>
                 <div>Достава</div>
                 <div>{formatCurrency(cart.shippingPrice)}</div>
