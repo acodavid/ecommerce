@@ -46,7 +46,6 @@ const OrderDetailsTable = ({
     orderitems,
     itemsPrice,
     shippingPrice,
-    taxPrice,
     totalPrice,
     paymentMethod,
     isDelivered,
