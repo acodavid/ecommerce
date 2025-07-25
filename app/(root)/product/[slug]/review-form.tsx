@@ -98,15 +98,15 @@ const ReviewForm = ({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <Button onClick={handleOpenForm} variant='default'>
-        Write a Review
+        Напиши утисак
       </Button>
       <DialogContent className='sm:max-w-[425px]'>
         <Form {...form}>
           <form method='post' onSubmit={form.handleSubmit(onSubmit)}>
             <DialogHeader>
-              <DialogTitle>Write a Review</DialogTitle>
+              <DialogTitle>Напиши утисак о производу</DialogTitle>
               <DialogDescription>
-                Share your thoughts with other customers
+                Поделите своје мишљење са другим купцима
               </DialogDescription>
             </DialogHeader>
             <div className='grid gap-4 py-4'>
@@ -115,9 +115,9 @@ const ReviewForm = ({
                 name='title'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Title</FormLabel>
+                    <FormLabel>Наслов</FormLabel>
                     <FormControl>
-                      <Input placeholder='Enter title' {...field} />
+                      <Input placeholder='Унесите наслов' {...field} />
                     </FormControl>
                   </FormItem>
                 )}
@@ -128,9 +128,9 @@ const ReviewForm = ({
                 render={({ field }) => {
                   return (
                     <FormItem>
-                      <FormLabel>Description</FormLabel>
+                      <FormLabel>Опис</FormLabel>
                       <FormControl>
-                        <Textarea placeholder='Enter description' {...field} />
+                        <Textarea placeholder='Унесите опис' {...field} />
                       </FormControl>
                     </FormItem>
                   );
@@ -142,7 +142,7 @@ const ReviewForm = ({
                 render={({ field }) => {
                   return (
                     <FormItem>
-                      <FormLabel>Rating</FormLabel>
+                      <FormLabel>Оцјена</FormLabel>
                       <Select
                         onValueChange={field.onChange}
                         value={field.value.toString()}
@@ -177,7 +177,7 @@ const ReviewForm = ({
                 className='w-full'
                 disabled={form.formState.isSubmitting}
               >
-                {form.formState.isSubmitting ? 'Submitting...' : 'Submit'}
+                {form.formState.isSubmitting ? 'Потврђујем...' : 'Потврди'}
               </Button>
             </DialogFooter>
           </form>

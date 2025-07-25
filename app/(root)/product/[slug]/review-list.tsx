@@ -45,7 +45,7 @@ const ReviewList = ({
 
   return (
     <div className='space-y-4'>
-      {reviews.length === 0 && <div>No reviews yet</div>}
+      {reviews.length === 0 && <div>Још нема оцјена</div>}
       {userId ? (
         <ReviewForm
           userId={userId}
@@ -54,14 +54,14 @@ const ReviewList = ({
         />
       ) : (
         <div>
-          Please
+          Молимо вас да се
           <Link
             className='text-blue-700 px-2'
             href={`/sign-in?callbackUrl=/product/${productSlug}`}
           >
-            sign in
+            пријавите
           </Link>
-          to write a review
+          да би оставили оцјену
         </div>
       )}
       <div className='flex flex-col gap-3'>
