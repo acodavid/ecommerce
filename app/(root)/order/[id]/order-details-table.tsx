@@ -224,10 +224,7 @@ const OrderDetailsTable = ({
                 <div>Артикли</div>
                 <div>{formatCurrency(itemsPrice)}</div>
               </div>
-              <div className='flex justify-between'>
-                <div>Tax</div>
-                <div>{formatCurrency(taxPrice)}</div>
-              </div>
+              {/* Tax removed */}
               <div className='flex justify-between'>
                 <div>Достава</div>
                 <div>{formatCurrency(shippingPrice)}</div>
